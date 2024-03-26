@@ -1,0 +1,42 @@
+﻿@model PostSeguridadPersonalizada.Models.DetalleDeporte
+
+@{
+    ViewData["Title"] = "DetailDeporte";
+}
+
+<h1>DetailDeporte</h1>
+
+<div>
+    <h4>DetalleDeporte</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.IdDetalle)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.IdDetalle)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.IdDeporte)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.IdDeporte)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Nombre)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Nombre)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Imagen)
+        </dt>
+        <dd class="col-sm-10">
+            <img src="~/Images/@Model.Imagen" class="w-50" />
+        </dd>
+    </dl>
+</div>
+<div>
+   
+    <a asp-action="deportes" asp-controller="deportes">Back to deportes</a>
+</div>

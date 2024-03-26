@@ -1,0 +1,51 @@
+﻿@model IEnumerable<PostSeguridadPersonalizada.Models.DetalleDeporte>
+
+@{
+    ViewData["Title"] = "Deportes";
+}
+
+<h1>Deportes</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.IdDetalle)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IdDeporte)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Nombre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Imagen)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdDetalle)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdDeporte)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nombre)
+            </td>
+            <td>
+                    <img src="~/Images/@item.Imagen" class="w-25 h-25" />
+            </td>
+            <td>
+               
+                    <a class="btn btn-success" asp-action="DetailDeporte" asp-controller="Deportes" asp-route-id="@item.IdDetalle">Detalles del @item.Nombre</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
